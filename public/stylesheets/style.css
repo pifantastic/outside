@@ -4,8 +4,8 @@ body {
 }
 
 .App {
-  color: #222;
-  background-color: #efefef;
+  color: #333;
+  background-color: white ;
   width: 800px;
   height: 480px;
   overflow: hidden;
@@ -15,13 +15,13 @@ body {
 
 .Clock {
   font-size: 106px;
-  font-family: 'Source Code Pro', monospace;
   position: relative;
 }
 
 .Clock-time {
   position: absolute;
   left: 10px;
+  font-family: 'Inconsolata', monospace;
 }
 
 .Clock-hours:after,
@@ -139,8 +139,12 @@ body {
 .Error {
   text-align: center;
   color: red;
+  position: relative;
+  top: 150px;
 }
 
 .Initializing {
   text-align: center;
+  position: relative;
+  top: 150px;
 }
