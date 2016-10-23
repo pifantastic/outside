@@ -21,6 +21,9 @@ class Forecast extends Component {
       return Math.min(a, b.temperature);
     }, Infinity);
 
+    const maxPixels = 100;
+    const minPixels = 35;
+
     return (
       <div className="Forecast">
         {hours.map((hour) => {
@@ -28,13 +31,15 @@ class Forecast extends Component {
 
           const date = new Date(time * 1000);
           const period = date.getHours() > 12 ? 'pm' : 'am';
+          const height = ((maxPixels - minPixels) / 100) *
+            (((temperature - minTemp) / (maxTemp - minTemp)) * 100) + minPixels;
 
           const tempStyle = {
-            bottom: temperature,
+            bottom: height,
           }
 
           const barStyle = {
-            height: temperature,
+            height: height,
           };
 
           return (

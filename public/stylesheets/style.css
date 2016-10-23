@@ -15,9 +15,13 @@ body {
 
 .Clock {
   font-size: 106px;
-  padding: 10px;
   font-family: 'Source Code Pro', monospace;
-  text-align: center;
+  position: relative;
+}
+
+.Clock-time {
+  position: absolute;
+  left: 10px;
 }
 
 .Clock-hours:after,
@@ -31,9 +35,18 @@ body {
   padding: 0 0 0 10px;
 }
 
+.Clock-date {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 24px;
+  max-width: 200px;
+}
+
 .Weather {
   font-size: 38px;
   position: relative;
+  top: 131px;
 }
 
 .Weather-icon {
@@ -46,14 +59,14 @@ body {
 .Weather-temperature {
   font-size: 72px;
   position: absolute;
-  top: 82px;
+  top: 100px;
   left: 23px;
 }
 
 .Weather-summary {
   font-size: 24px;
   position: absolute;
-  top: 40px;
+  top: 42px;
   left: 139px;
 }
 
@@ -74,7 +87,7 @@ body {
   height: 100px;
   width: 792px;
   position: absolute;
-  bottom: 20px;
+  bottom: 17px;
   left: 4px;
 }
 

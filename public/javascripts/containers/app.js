@@ -43,7 +43,7 @@ class App extends Component {
         <div className="App">
           <Clock />
           <div className="Error">
-            <h1>Error fetching weather</h1>
+            <h1>Error fetching weather data</h1>
             <p>Details: {error}</p>
           </div>
         </div>
@@ -64,8 +64,8 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     weather: state.weather,
-    sunrise: sunriseSelector(state),
-    sunset: sunsetSelector(state),
+    // sunrise: sunriseSelector(state),
+    // sunset: sunsetSelector(state),
   };
 };
 

@@ -12,9 +12,11 @@ export const fetchWeather = () => dispatch => {
       const json = response.json();
 
       if (response.status === 200) {
-        return dispatch({
-          type: RECEIVE_WEATHER,
-          weather: json,
+        json.then((weather) => {
+          return dispatch({
+            type: RECEIVE_WEATHER,
+            weather,
+          });
         });
       }
       else {
