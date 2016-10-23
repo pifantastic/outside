@@ -1,0 +1,124 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  color: #222;
+  background-color: #efefef;
+  width: 800px;
+  height: 480px;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+}
+
+.Clock {
+  font-size: 106px;
+  padding: 10px;
+  font-family: 'Source Code Pro', monospace;
+  text-align: center;
+}
+
+.Clock-hours:after,
+.Clock-minutes:after {
+  content: ':';
+}
+
+.Clock-period {
+  vertical-align: super;
+  font-size: 40px;
+  padding: 0 0 0 10px;
+}
+
+.Weather {
+  font-size: 38px;
+  position: relative;
+}
+
+.Weather-icon {
+  font-size: 72px;
+  position: absolute;
+  top: 10px;
+  left: 40px;
+}
+
+.Weather-temperature {
+  font-size: 72px;
+  position: absolute;
+  top: 82px;
+  left: 23px;
+}
+
+.Weather-summary {
+  font-size: 24px;
+  position: absolute;
+  top: 40px;
+  left: 139px;
+}
+
+.Weather-stats {
+  font-size: 18px;
+  position: absolute;
+  top: 40px;
+  right: 15px;
+}
+
+.Weather-stats th {
+  min-width: 100px;
+  text-align: right;
+  padding: 0 20px 0 0;
+}
+
+.Forecast {
+  height: 100px;
+  width: 792px;
+  position: absolute;
+  bottom: 20px;
+  left: 4px;
+}
+
+.Forecast-hour {
+  display: inline-block;
+  width: 65px;
+  height: 100%;
+  font-size: 12px;
+  margin: 0 1px 0 0;
+  text-align: center;
+  position: relative;
+}
+
+.Forecast-hour-icon {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+  color: white;
+  font-size: 24px;
+}
+
+.Forecast-hour-temperature {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.Forecast-hour-time {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  bottom: -15px;
+  font-size: 10px;
+}
+
+.Forecast-hour-bar {
+  bottom: 0;
+  background-color: #307fff;
+  width: 65px;
+  position: absolute;
+  z-index: 1;
+}
