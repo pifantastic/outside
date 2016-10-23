@@ -23,7 +23,7 @@ if (PRODUCTION) {
 }
 
 module.exports = {
-  entry: './public/javascripts/index.js',
+  entry: ['whatwg-fetch', './public/javascripts/index.js'],
   output: {
     path: './public/javascripts',
     filename: 'bundle.js'

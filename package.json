@@ -32,7 +32,8 @@
     "request-promise": "^4.1.1",
     "reselect": "^2.5.4",
     "serve-favicon": "~2.3.0",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
