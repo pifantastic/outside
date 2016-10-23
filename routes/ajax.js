@@ -10,7 +10,13 @@ router.get('/weather', function(req, res, next) {
     .then((forecast) => {
       res.json(forecast);
     })
-    .catch(next);
+    .catch((error) => {
+      res.status(error.statusCode).json({
+        error: {
+          message: error.error,
+        },
+      });
+    });
 
   // return;
 

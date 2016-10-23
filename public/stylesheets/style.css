@@ -122,3 +122,12 @@ body {
   position: absolute;
   z-index: 1;
 }
+
+.Error {
+  text-align: center;
+  color: red;
+}
+
+.Initializing {
+  text-align: center;
+}

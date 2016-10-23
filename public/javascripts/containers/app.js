@@ -17,7 +17,7 @@ class App extends Component {
   componentDidMount() {
     const {dispatch} = this.props;
     dispatch(fetchWeather());
-    this.interval = setInterval(() => dispatch(fetchWeather()), 5000);
+    this.interval = setInterval(() => dispatch(fetchWeather()), 2 * 60 * 1000);
   }
 
   componentWillUnmount() {
@@ -26,14 +26,38 @@ class App extends Component {
 
   render() {
     const {weather} = this.props;
+    const {isInitializing, error} = weather;
 
-    return (
-      <div className="App">
-        <Clock />
-        <Weather {...weather} />
-        <Forecast {...weather} />
-      </div>
-    );
+    if (isInitializing) {
+      return (
+        <div className="App">
+          <Clock />
+          <div className="Initializing">
+            Initializing...
+          </div>
+        </div>
+      );
+    }
+    else if (error) {
+      return (
+        <div className="App">
+          <Clock />
+          <div className="Error">
+            <h1>Error fetching weather</h1>
+            <p>Details: {error}</p>
+          </div>
+        </div>
+      );
+    }
+    else {
+      return (
+        <div className="App">
+          <Clock />
+          <Weather {...weather} />
+          <Forecast {...weather} />
+        </div>
+      );
+    }
   }
 }
 

@@ -5,11 +5,7 @@ import {degreesToDirection} from '../lib/conversions';
 
 class Weather extends Component {
   render() {
-    const {isInitializing, weather} = this.props;
-
-    if (isInitializing) {
-      return <div>Initializing...</div>;
-    }
+    const {weather} = this.props;
 
     const {currently, hourly} = weather;
     const {

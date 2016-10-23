@@ -22,7 +22,7 @@ class Clock extends Component {
     const seconds = now.getSeconds();
 
     return {
-      hours: hours > 12 ? hours - 12 : hours,
+      hours: hours > 12 ? hours - 12 : hours === 0 ? 12 : hours,
       minutes: minutes > 9 ? minutes : `0${minutes}`,
       seconds: seconds > 9 ? seconds : `0${seconds}`,
       period: hours > 12 ? 'pm' : 'am',
