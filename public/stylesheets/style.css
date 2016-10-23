@@ -1,6 +1,7 @@
 body {
   padding: 0;
   margin: 0;
+  overflow: hidden;
 }
 
 .App {
@@ -87,7 +88,7 @@ body {
   height: 100px;
   width: 792px;
   position: absolute;
-  bottom: 17px;
+  bottom: 20px;
   left: 4px;
 }
 
@@ -124,8 +125,8 @@ body {
   z-index: 2;
   width: 100%;
   text-align: center;
-  bottom: -15px;
-  font-size: 10px;
+  bottom: -21px;
+  font-size: 15px;
 }
 
 .Forecast-hour-bar {

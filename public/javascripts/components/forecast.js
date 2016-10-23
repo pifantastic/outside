@@ -51,7 +51,7 @@ class Forecast extends Component {
                 <Icon icon={icon} />
               </div>
               <div className="Forecast-hour-time">
-                {date.getHours() > 12 ? date.getHours() - 12 : date.getHours()}
+                {date.getHours() > 12 ? date.getHours() - 12 : date.getHours() == 0 ? 12 : date.getHours()}
                 {period}
               </div>
               <div className="Forecast-hour-bar" style={barStyle}></div>
