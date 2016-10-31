@@ -21,8 +21,8 @@ class Forecast extends Component {
       return Math.min(a, b.temperature);
     }, Infinity);
 
-    const maxPixels = 100;
-    const minPixels = 35;
+    const maxPixels = 150;
+    const minPixels = 40;
 
     return (
       <div className="Forecast">

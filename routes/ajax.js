@@ -33,7 +33,8 @@ router.get('/weather', function(req, res, next) {
     daily: {
       data: [
         {
-
+          temperatureMax: 90,
+          temperatureMin: 60,
         }
       ]
     },

@@ -5,13 +5,19 @@ body {
 }
 
 .App {
-  color: #333;
-  background-color: white ;
+  color: #424770;
+  background-color: #f6f9fc;
   width: 800px;
   height: 480px;
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
   position: relative;
+}
+
+.DateTime {
+  height: 122px;
+  background-color: #e8eaed;
+  border-bottom: 1px solid #cfd7df;
 }
 
 .Clock {
@@ -25,8 +31,7 @@ body {
   font-family: 'Inconsolata', monospace;
 }
 
-.Clock-hours:after,
-.Clock-minutes:after {
+.Clock-hours:after {
   content: ':';
 }
 
@@ -36,45 +41,57 @@ body {
   padding: 0 0 0 10px;
 }
 
-.Clock-date {
+.Date {
   position: absolute;
   right: 20px;
-  top: 20px;
-  font-size: 24px;
-  max-width: 200px;
+  top: 12px;
+  font-size: 36px;
+}
+
+.Date-weekday {
+  text-align: right;
 }
 
 .Weather {
   font-size: 38px;
   position: relative;
-  top: 131px;
+  top: 0;
 }
 
 .Weather-icon {
-  font-size: 72px;
+  font-size: 95px;
   position: absolute;
   top: 10px;
-  left: 40px;
+  left: 22px;
+  width: 105px;
+  text-align: center;
 }
 
 .Weather-temperature {
-  font-size: 72px;
+  font-size: 95px;
   position: absolute;
-  top: 100px;
-  left: 23px;
+  top: 10px;
+  left: 159px;
+}
+
+.Weather-temperature-highlow {
+  font-size: 24px;
+  text-align: center;
 }
 
 .Weather-summary {
   font-size: 24px;
   position: absolute;
-  top: 42px;
-  left: 139px;
+  top: 126px;
+  left: 22px;
+  width: 105px;
+  text-align: center;
 }
 
 .Weather-stats {
-  font-size: 18px;
+  font-size: 22px;
   position: absolute;
-  top: 40px;
+  top: 22px;
   right: 15px;
 }
 
@@ -85,7 +102,7 @@ body {
 }
 
 .Forecast {
-  height: 100px;
+  height: 150px;
   width: 792px;
   position: absolute;
   bottom: 20px;
@@ -104,7 +121,7 @@ body {
 
 .Forecast-hour-icon {
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   width: 100%;
   text-align: center;
   z-index: 3;
@@ -125,13 +142,13 @@ body {
   z-index: 2;
   width: 100%;
   text-align: center;
-  bottom: -21px;
+  bottom: -18px;
   font-size: 15px;
 }
 
 .Forecast-hour-bar {
   bottom: 0;
-  background-color: #307fff;
+  background-color: #6772e5;
   width: 65px;
   position: absolute;
   z-index: 1;

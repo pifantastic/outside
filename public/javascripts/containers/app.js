@@ -4,10 +4,7 @@ import {fetchWeather} from '../actions';
 import Weather from '../components/weather';
 import Clock from '../components/clock';
 import Forecast from '../components/forecast';
-import {
-  sunsetSelector,
-  sunriseSelector
-} from '../selectors'
+import Date from '../components/date';
 
 class App extends Component {
   static propTypes = {
@@ -31,7 +28,10 @@ class App extends Component {
     if (isInitializing) {
       return (
         <div className="App">
-          <Clock />
+          <div className="DateTime">
+            <Clock />
+            <Date />
+          </div>
           <div className="Initializing">
             Initializing...
           </div>
@@ -41,7 +41,10 @@ class App extends Component {
     else if (error) {
       return (
         <div className="App">
-          <Clock />
+          <div className="DateTime">
+            <Clock />
+            <Date />
+          </div>
           <div className="Error">
             <h1>Error fetching weather data</h1>
             <p>Details: {error}</p>
@@ -52,7 +55,10 @@ class App extends Component {
     else {
       return (
         <div className="App">
-          <Clock />
+          <div className="DateTime">
+            <Clock />
+            <Date />
+          </div>
           <Weather {...weather} />
           <Forecast {...weather} />
         </div>
@@ -64,8 +70,6 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     weather: state.weather,
-    // sunrise: sunriseSelector(state),
-    // sunset: sunsetSelector(state),
   };
 };
 
