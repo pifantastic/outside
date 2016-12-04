@@ -3,7 +3,7 @@ import Icon from './icon';
 
 const MAX_PIXELS = 150;
 const MIN_PIXELS = 40;
-const PADDING = 5;
+const PADDING = 2;
 
 class Forecast extends Component {
   render() {
@@ -16,7 +16,7 @@ class Forecast extends Component {
     const {hourly} = weather;
 
     // Grab the next 12 hours of data.
-    const hours = hourly.data.slice(1, 13);
+    const hours = hourly.data.slice(0, 12);
 
     // Calculate the maximum temperature to display.
     const maxTemp = hours.reduce((a, b) => {
