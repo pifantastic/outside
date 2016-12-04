@@ -24,7 +24,7 @@ class Clock extends Component {
     return {
       hours: hours > 12 ? hours - 12 : hours === 0 ? 12 : hours,
       minutes: minutes > 9 ? minutes : `0${minutes}`,
-      period: hours > 12 ? 'pm' : 'am',
+      period: hours >= 12 ? 'pm' : 'am',
     };
   }
 
