@@ -28,9 +28,9 @@ class Weather extends Component {
       <div className="Weather">
         <div className="Weather-icon">
           <Icon icon={icon} />
-        </div>
-        <div className="Weather-summary">
-          {summary}
+          <div className="Weather-summary">
+            {summary}
+          </div>
         </div>
         <div className="Weather-temperature">
           {Math.round(temperature)}℉

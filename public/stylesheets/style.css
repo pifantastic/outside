@@ -75,16 +75,12 @@ body {
 }
 
 .Weather-temperature-highlow {
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
 }
 
 .Weather-summary {
-  font-size: 24px;
-  position: absolute;
-  top: 126px;
-  left: 22px;
-  width: 105px;
+  font-size: 20px;
   text-align: center;
 }
 
