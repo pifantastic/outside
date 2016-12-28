@@ -14,10 +14,20 @@ body {
   position: relative;
 }
 
+.App--night {
+  color: #a0a0a0;
+  background-color: #424770;
+}
+
 .DateTime {
   height: 122px;
   background-color: #e8eaed;
   border-bottom: 1px solid #cfd7df;
+}
+
+.App--night .DateTime {
+  background-color: inherit;
+  border-bottom: 1px solid #a0a0a0;
 }
 
 .Clock {
@@ -125,6 +135,10 @@ body {
   font-size: 24px;
 }
 
+.App--night .Forecast-hour-icon {
+  color: #424770;
+}
+
 .Forecast-hour-temperature {
   position: absolute;
   z-index: 2;
@@ -148,6 +162,10 @@ body {
   width: 65px;
   position: absolute;
   z-index: 1;
+}
+
+.App--night .Forecast-hour-bar {
+  background-color: #a0a0a0;
 }
 
 .Error {
