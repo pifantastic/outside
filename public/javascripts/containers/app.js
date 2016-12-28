@@ -24,7 +24,7 @@ class App extends Component {
     const {dispatch} = this.props;
     dispatch(fetchWeather());
     this.setTheme();
-    this.interval = setInterval(() => dispatch(fetchWeather()), 2 * 60 * 1000);
+    this.interval = setInterval(() => dispatch(fetchWeather()), 5 * 60 * 1000);
     this.themeInterval = setInterval(() => this.setTheme(), 1 * 60 * 1000);
   }
 
