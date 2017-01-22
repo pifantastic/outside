@@ -1,10 +1,11 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
-import {fetchWeather} from '../actions';
+import {fetchWeather, fetchAllergies} from '../actions';
 import Weather from '../components/weather';
 import Clock from '../components/clock';
 import Forecast from '../components/forecast';
 import DateComponent from '../components/date';
+import Allergies from '../components/allergies';
 import classNames from 'classnames';
 
 class App extends Component {
@@ -22,15 +23,21 @@ class App extends Component {
 
   componentDidMount() {
     const {dispatch} = this.props;
+
     dispatch(fetchWeather());
+    dispatch(fetchAllergies());
+
     this.setTheme();
-    this.interval = setInterval(() => dispatch(fetchWeather()), 5 * 60 * 1000);
+
+    this.weatherInterval = setInterval(() => dispatch(fetchWeather()), 5 * 60 * 1000);
+    this.allergyInterval = setInterval(() => dispatch(fetchAllergies()), 10 * 60 * 1000);
     this.themeInterval = setInterval(() => this.setTheme(), 1 * 60 * 1000);
   }
 
   componentWillUnmount() {
-    clearInterval(this.interval);
+    clearInterval(this.weatherInterval);
     clearInterval(this.themeInterval);
+    clearInterval(this.allergyInterval);
   }
 
   setTheme() {
@@ -42,7 +49,7 @@ class App extends Component {
 
   render() {
     const {theme} = this.state;
-    const {weather} = this.props;
+    const {weather, allergies} = this.props;
     const {isInitializing, error} = weather;
     const className = classNames('App', {
       'App--night': theme === 'night',
@@ -82,6 +89,7 @@ class App extends Component {
             <Clock />
             <DateComponent />
           </div>
+          <Allergies {...allergies} />
           <Weather {...weather} />
           <Forecast {...weather} />
         </div>
@@ -93,6 +101,7 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     weather: state.weather,
+    allergies: state.allergies,
   };
 };
 

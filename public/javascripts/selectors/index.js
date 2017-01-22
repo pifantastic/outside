@@ -1,6 +1,7 @@
 import {createSelector} from 'reselect';
 
 const weatherSelector = state => state.weather.weather;
+const allergiesSelector = state => state.allergies.allergies;
 
 export const sunriseSelector = createSelector(
   weatherSelector,

@@ -2,6 +2,7 @@ module.exports = {
   location: {
     latitude: 30.2733795,
     longitude: -97.75250919999996,
+    zipCode: 78701,
   },
   darksky: {
     keys: [],
