@@ -49,7 +49,7 @@ class App extends Component {
 
   render() {
     const {theme} = this.state;
-    const {weather, allergies} = this.props;
+    const {weather} = this.props;
     const {isInitializing, error} = weather;
     const className = classNames('App', {
       'App--night': theme === 'night',
@@ -89,7 +89,7 @@ class App extends Component {
             <Clock />
             <DateComponent />
           </div>
-          <Allergies {...allergies} />
+          <Allergies />
           <Weather {...weather} />
           <Forecast {...weather} />
         </div>
@@ -101,7 +101,6 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     weather: state.weather,
-    allergies: state.allergies,
   };
 };
 
