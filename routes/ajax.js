@@ -25,7 +25,6 @@ router.get('/allergies', function(req, res, next) {
 
   allergies.forecast(config.zipCode)
     .then((forecast) => {
-      console.log(typeof forecast);
       res.json(forecast);
     })
     .catch((error) => {
