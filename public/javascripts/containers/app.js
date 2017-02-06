@@ -42,7 +42,7 @@ class App extends Component {
 
   setTheme() {
     const hour = new Date().getHours();
-    const theme = (hour >= 23 || hour <= 7) ? 'night' : 'day';
+    const theme = (hour >= 23 || hour <= 6) ? 'night' : 'day';
 
     this.setState({theme: theme});
   }

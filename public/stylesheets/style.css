@@ -27,7 +27,7 @@ body {
 
 .App--night .DateTime {
   background-color: inherit;
-  border-bottom: 1px solid #a0a0a0;
+  border-bottom: none;
 }
 
 .Clock {
@@ -190,3 +190,9 @@ body {
 .Allergies--medium { background-color: #f79a59; }
 .Allergies--high-medium { background-color: #fa755a; }
 .Allergies--high { background-color: #d782d9; }
+
+.App--night .Allergies--low { background-color: #0a7261; }
+.App--night .Allergies--medium-low { background-color: #b5562b; }
+.App--night .Allergies--medium { background-color: #aa3c38; }
+.App--night .Allergies--high-medium { background-color: #9e2146; }
+.App--night .Allergies--high { background-color: #6b3791; }
