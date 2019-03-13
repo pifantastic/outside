@@ -16,12 +16,12 @@ class Weather extends Component {
       precipProbability,
       windSpeed,
       windBearing,
-      visibility,
     } = currently;
     const today = daily.data.length ? daily.data[0] : {};
     const {
       temperatureMax,
       temperatureMin,
+      precipAccumulation,
     } = today;
 
     return (
@@ -50,12 +50,12 @@ class Weather extends Component {
                 <td>{Math.round(precipProbability * 100)}%</td>
               </tr>
               <tr>
-                <th>wind</th>
-                <td>{windSpeed} mph {degreesToDirection(windBearing + 180)}</td>
+                <th>snowfall</th>
+                <td>{precipAccumulation.toFixed(2)} inches</td>
               </tr>
               <tr>
-                <th>visibility</th>
-                <td>{visibility.toFixed(2)} miles</td>
+                <th>wind</th>
+                <td>{windSpeed} mph {degreesToDirection(windBearing + 180)}</td>
               </tr>
             </tbody>
           </table>
