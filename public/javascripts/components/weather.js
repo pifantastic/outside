@@ -16,9 +16,9 @@ class Weather extends Component {
       precipProbability,
       windSpeed,
       windBearing,
-      visibility,
     } = currently;
     const today = daily.data.length ? daily.data[0] : {};
+    const todaySummary = today.summary;
     const {
       temperatureMax,
       temperatureMin,
@@ -37,6 +37,9 @@ class Weather extends Component {
           <div className="Weather-temperature-highlow">
             {Math.round(temperatureMax)}℉ / {Math.round(temperatureMin)}℉
           </div>
+          <div className="Weather-today-summary">
+            {todaySummary}
+          </div>
         </div>
         <div className="Weather-stats">
           <table>
@@ -52,10 +55,6 @@ class Weather extends Component {
               <tr>
                 <th>wind</th>
                 <td>{windSpeed} mph {degreesToDirection(windBearing + 180)}</td>
-              </tr>
-              <tr>
-                <th>visibility</th>
-                <td>{visibility.toFixed(2)} miles</td>
               </tr>
             </tbody>
           </table>
