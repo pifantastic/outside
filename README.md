@@ -6,7 +6,7 @@ A clock/weather app for my raspberry pi touchscreen.
 
 - `git clone git@github.com:pifantastic/outside.git && cd outside` – Clone the repo
 - `npm install` – Install dependencies
-- `webpack` – Build static assets
+- `npx webpack` – Build static assets
 - `npm run start` – Start the server
 - Go to http://localhost:3000/
 
