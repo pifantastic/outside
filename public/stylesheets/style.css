@@ -89,6 +89,12 @@ body {
   text-align: center;
 }
 
+.Weather-today-summary {
+  font-size: 20px;
+  text-align: center;
+}
+
+
 .Weather-summary {
   font-size: 20px;
   text-align: center;

@@ -18,7 +18,7 @@ class Weather extends Component {
       windBearing,
     } = currently;
     const today = daily.data.length ? daily.data[0] : {};
-    const precipAccumulation = today.precipAccumulation ? today.precipAccumulation : 0;
+    const todaySummary = today.summary;
     const {
       temperatureMax,
       temperatureMin,
@@ -37,6 +37,9 @@ class Weather extends Component {
           <div className="Weather-temperature-highlow">
             {Math.round(temperatureMax)}℉ / {Math.round(temperatureMin)}℉
           </div>
+          <div className="Weather-today-summary">
+            {todaySummary}
+          </div>
         </div>
         <div className="Weather-stats">
           <table>
@@ -48,10 +51,6 @@ class Weather extends Component {
               <tr>
                 <th>precipitation</th>
                 <td>{Math.round(precipProbability * 100)}%</td>
-              </tr>
-              <tr>
-                <th>snowfall</th>
-                <td>{precipAccumulation.toFixed(2)} inches</td>
               </tr>
               <tr>
                 <th>wind</th>
