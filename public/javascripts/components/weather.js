@@ -18,10 +18,10 @@ class Weather extends Component {
       windBearing,
     } = currently;
     const today = daily.data.length ? daily.data[0] : {};
+    const precipAccumulation = today.precipAccumulation ? today.precipAccumulation : 0;
     const {
       temperatureMax,
       temperatureMin,
-      precipAccumulation,
     } = today;
 
     return (
