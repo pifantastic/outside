@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import classNames from "classnames";
 
-const INTERVAL = 5 * 1000;
+// The amount of time (in milliseconds) to wait before advancing to the next
+// summary.
+const INTERVAL = 7 * 1000;
 
 class Summary extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      summaries: this.getSummaries(),
       currentSummary: 0
     };
   }
@@ -17,33 +17,32 @@ class Summary extends Component {
     this.interval = setInterval(() => this.nextSummary(), INTERVAL);
   }
 
-  getSummaries() {
-    const { weather } = this.props;
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
 
-    return [
+  nextSummary() {
+    this.setState({ currentSummary: this.state.currentSummary + 1 });
+  }
+
+  currentSummary() {
+    const { weather, isInitializing } = this.props;
+
+    if (isInitializing) {
+      return null;
+    }
+
+    const summaries = [
       weather.minutely.summary,
       weather.hourly.summary,
       weather.daily.summary
     ];
-  }
 
-  nextSummary() {
-    let currentSummary = this.state.currentSummary + 1;
-
-    if (currentSummary >= this.state.summaries.length) {
-      currentSummary = 0;
-    }
-
-    this.setState({ currentSummary });
-  }
-
-  currentSummary() {
-    return this.state.summaries[this.state.currentSummary];
+    return summaries[this.state.currentSummary % summaries.length];
   }
 
   render() {
-    const className = classNames("Summary");
-    return <div className={className}>{this.currentSummary()}</div>;
+    return <div className="Summary">{this.currentSummary()}</div>;
   }
 }
 
