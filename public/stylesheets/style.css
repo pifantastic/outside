@@ -100,13 +100,13 @@ body {
   top: 22px;
   right: 15px;
   max-width: 380px;
-  vertical-align: text-top;
 }
 
 .Weather-stats th {
   min-width: 100px;
   text-align: right;
   padding: 0 20px 0 0;
+  vertical-align: text-top;
 }
 
 .Forecast {
