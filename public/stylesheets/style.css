@@ -99,6 +99,8 @@ body {
   position: absolute;
   top: 22px;
   right: 15px;
+  max-width: 380px;
+  vertical-align: text-top;
 }
 
 .Weather-stats th {
