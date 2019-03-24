@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import Icon from './icon';
+import React, { Component } from "react";
+import Icon from "./icon";
 
 const MAX_PIXELS = 150;
 const MIN_PIXELS = 40;
@@ -7,43 +7,48 @@ const PADDING = 2;
 
 class Forecast extends Component {
   render() {
-    const {weather, isInitializing} = this.props;
+    const { weather, isInitializing } = this.props;
 
     if (isInitializing) {
       return <div>Initializing...</div>;
     }
 
-    const {hourly} = weather;
+    const { hourly } = weather;
 
     // Grab the next 12 hours of data.
-    const hours = hourly.data.slice(0, 12);
+    const hours = hourly.data.slice(0, 18);
 
     // Calculate the maximum temperature to display.
-    const maxTemp = hours.reduce((a, b) => {
-      return Math.max(a, Math.round(b.temperature));
-    }, -Infinity) + PADDING;
+    const maxTemp =
+      hours.reduce((a, b) => {
+        return Math.max(a, Math.round(b.temperature));
+      }, -Infinity) + PADDING;
 
     // Calculate the minimum temperature to display.
-    const minTemp = hours.reduce((a, b) => {
-      return Math.min(a, Math.round(b.temperature));
-    }, Infinity) - PADDING;
+    const minTemp =
+      hours.reduce((a, b) => {
+        return Math.min(a, Math.round(b.temperature));
+      }, Infinity) - PADDING;
 
     return (
       <div className="Forecast">
-        {hours.map((hour) => {
-          const {time, summary, temperature, icon} = hour;
+        {hours.map(hour => {
+          const { time, summary, temperature, icon } = hour;
 
           const date = new Date(time * 1000);
-          const period = date.getHours() >= 12 ? 'pm' : 'am';
-          const height = ((MAX_PIXELS - MIN_PIXELS) / 100) *
-            (((Math.round(temperature) - minTemp) / (maxTemp - minTemp)) * 100) + MIN_PIXELS;
+          const period = date.getHours() >= 12 ? "pm" : "am";
+          const height =
+            ((MAX_PIXELS - MIN_PIXELS) / 100) *
+              (((Math.round(temperature) - minTemp) / (maxTemp - minTemp)) *
+                100) +
+            MIN_PIXELS;
 
           const tempStyle = {
-            bottom: height,
-          }
+            bottom: height
+          };
 
           const barStyle = {
-            height: height,
+            height: height
           };
 
           return (
@@ -55,10 +60,14 @@ class Forecast extends Component {
                 <Icon icon={icon} />
               </div>
               <div className="Forecast-hour-time">
-                {date.getHours() > 12 ? date.getHours() - 12 : date.getHours() == 0 ? 12 : date.getHours()}
+                {date.getHours() > 12
+                  ? date.getHours() - 12
+                  : date.getHours() == 0
+                  ? 12
+                  : date.getHours()}
                 {period}
               </div>
-              <div className="Forecast-hour-bar" style={barStyle}></div>
+              <div className="Forecast-hour-bar" style={barStyle} />
             </div>
           );
         })}

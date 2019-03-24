@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
-import Icon from './icon';
-import {degreesToDirection} from '../lib/conversions';
-
+import React, { Component } from "react";
+import Icon from "./icon";
+import { degreesToDirection } from "../lib/conversions";
 
 class Weather extends Component {
   render() {
-    const {weather} = this.props;
+    const { weather } = this.props;
 
-    const {currently, hourly, daily} = weather;
+    const { currently, hourly, daily, minutely } = weather;
     const {
       temperature,
       humidity,
@@ -15,30 +14,21 @@ class Weather extends Component {
       icon,
       precipProbability,
       windSpeed,
-      windBearing,
+      windBearing
     } = currently;
     const today = daily.data.length ? daily.data[0] : {};
-    const todaySummary = today.summary;
-    const {
-      temperatureMax,
-      temperatureMin,
-    } = today;
+    const { temperatureMax, temperatureMin } = today;
 
     return (
       <div className="Weather">
         <div className="Weather-icon">
           <Icon icon={icon} />
-          <div className="Weather-summary">
-            {summary}
-          </div>
+          <div className="Weather-summary">{summary}</div>
         </div>
         <div className="Weather-temperature">
           {Math.round(temperature)}℉
           <div className="Weather-temperature-highlow">
             {Math.round(temperatureMax)}℉ / {Math.round(temperatureMin)}℉
-          </div>
-          <div className="Weather-today-summary">
-            {todaySummary}
           </div>
         </div>
         <div className="Weather-stats">
@@ -54,7 +44,13 @@ class Weather extends Component {
               </tr>
               <tr>
                 <th>wind</th>
-                <td>{windSpeed} mph {degreesToDirection(windBearing + 180)}</td>
+                <td>
+                  {windSpeed} mph {degreesToDirection(windBearing + 180)}
+                </td>
+              </tr>
+              <tr>
+                <th>summary</th>
+                <td>{minutely.summary}</td>
               </tr>
             </tbody>
           </table>

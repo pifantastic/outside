@@ -10,7 +10,7 @@ body {
   width: 800px;
   height: 480px;
   overflow: hidden;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   position: relative;
 }
 
@@ -38,11 +38,11 @@ body {
 .Clock-time {
   position: absolute;
   left: 10px;
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
 }
 
 .Clock-hours:after {
-  content: ':';
+  content: ":";
 }
 
 .Clock-period {
@@ -69,7 +69,7 @@ body {
 }
 
 .Weather-icon {
-  font-size: 95px;
+  font-size: 87px;
   position: absolute;
   top: 10px;
   left: 22px;
@@ -78,7 +78,7 @@ body {
 }
 
 .Weather-temperature {
-  font-size: 95px;
+  font-size: 87px;
   position: absolute;
   top: 10px;
   left: 186px;
@@ -89,19 +89,13 @@ body {
   text-align: center;
 }
 
-.Weather-today-summary {
-  font-size: 20px;
-  text-align: center;
-}
-
-
 .Weather-summary {
   font-size: 20px;
   text-align: center;
 }
 
 .Weather-stats {
-  font-size: 22px;
+  font-size: 20px;
   position: absolute;
   top: 22px;
   right: 15px;
@@ -123,7 +117,7 @@ body {
 
 .Forecast-hour {
   display: inline-block;
-  width: 65px;
+  width: 43px;
   height: 100%;
   font-size: 12px;
   margin: 0 1px 0 0;
@@ -165,7 +159,7 @@ body {
 .Forecast-hour-bar {
   bottom: 0;
   background-color: #6772e5;
-  width: 65px;
+  width: 43px;
   position: absolute;
   z-index: 1;
 }
@@ -187,18 +181,7 @@ body {
   top: 150px;
 }
 
-.Allergies {
-  height: 10px;
+.Summary {
+  padding: 0 5px;
+  font-size: 14px;
 }
-
-.Allergies--low { background-color: #3ecf8e; }
-.Allergies--medium-low { background-color: #f5be58; }
-.Allergies--medium { background-color: #f79a59; }
-.Allergies--high-medium { background-color: #fa755a; }
-.Allergies--high { background-color: #d782d9; }
-
-.App--night .Allergies--low { background-color: #0a7261; }
-.App--night .Allergies--medium-low { background-color: #b5562b; }
-.App--night .Allergies--medium { background-color: #aa3c38; }
-.App--night .Allergies--high-medium { background-color: #9e2146; }
-.App--night .Allergies--high { background-color: #6b3791; }
