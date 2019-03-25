@@ -39,6 +39,7 @@ body {
   position: absolute;
   left: 10px;
   font-family: "Inconsolata", monospace;
+  width: 400px;
 }
 
 .Clock-hours:after {
@@ -49,6 +50,19 @@ body {
   vertical-align: super;
   font-size: 40px;
   padding: 0 0 0 10px;
+}
+
+.Clock-sun {
+  font-size: 18px;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  line-height: 30px;
+}
+
+.Clock-sunrise {
+  display: block;
+  border-bottom: 1px solid #cfd7df;
 }
 
 .Date {

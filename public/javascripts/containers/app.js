@@ -59,7 +59,7 @@ class App extends Component {
       return (
         <div className={className}>
           <div className="DateTime">
-            <Clock />
+            <Clock isInitializing={isInitializing} />
             <DateComponent />
           </div>
           <div className="Initializing">Initializing...</div>
@@ -69,7 +69,7 @@ class App extends Component {
       return (
         <div className={className}>
           <div className="DateTime">
-            <Clock />
+            <Clock isInitializing={isInitializing} />
             <DateComponent />
           </div>
           <div className="Error">
@@ -82,7 +82,7 @@ class App extends Component {
       return (
         <div className={className}>
           <div className="DateTime">
-            <Clock />
+            <Clock {...weather} />
             <DateComponent />
           </div>
           <Summary {...weather} />
