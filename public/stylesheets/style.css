@@ -32,14 +32,13 @@ body {
 
 .Clock {
   font-size: 106px;
-  position: relative;
+  position: absolute;
+  left: 10px;
 }
 
 .Clock-time {
-  position: absolute;
-  left: 10px;
   font-family: "Inconsolata", monospace;
-  width: 400px;
+  float: left;
 }
 
 .Clock-hours:after {
@@ -53,15 +52,15 @@ body {
 }
 
 .Clock-sun {
-  font-size: 18px;
-  position: absolute;
-  top: 30px;
-  right: 0;
-  line-height: 30px;
+  font-size: 20px;
+  line-height: 34px;
+  float: left;
+  margin: 26px 0 0 30px;
+  height: 122px;
+  font-weight: normal;
 }
 
 .Clock-sunrise {
-  display: block;
   border-bottom: 1px solid #cfd7df;
 }
 

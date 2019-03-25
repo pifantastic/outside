@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
 import { numberToOrdinal } from "../lib/conversions";
+import Icon from "./icon";
 
 const SUN_FORMAT = "h:mm a";
 
@@ -46,14 +47,16 @@ class Clock extends Component {
     }
 
     return (
-      <span className="Clock-sun">
-        <span className="Clock-sunrise">
+      <div className="Clock-sun">
+        <div className="Clock-sunrise">
+          <Icon icon="sunrise" />{" "}
           {moment(data.sunriseTime * 1000).format(SUN_FORMAT)}
-        </span>
-        <span className="Clock-sunset">
+        </div>
+        <div className="Clock-sunset">
+          <Icon icon="sunset" />{" "}
           {moment(data.sunsetTime * 1000).format(SUN_FORMAT)}
-        </span>
-      </span>
+        </div>
+      </div>
     );
   }
 
@@ -66,8 +69,8 @@ class Clock extends Component {
           <span className="Clock-hours">{hours}</span>
           <span className="Clock-minutes">{minutes}</span>
           <span className="Clock-period">{period}</span>
-          {this.renderSun()}
         </div>
+        {this.renderSun()}
       </div>
     );
   }
