@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Icon from "./icon";
+import Skycon from './skycon';
 import { degreesToDirection } from "../lib/conversions";
 
 class Weather extends Component {
@@ -22,7 +22,7 @@ class Weather extends Component {
     return (
       <div className="Weather">
         <div className="Weather-icon">
-          <Icon icon={icon} />
+          <Skycon icon={icon} width={88} height={82} color="#424770" />
           <div className="Weather-summary">{summary}</div>
         </div>
         <div className="Weather-temperature">

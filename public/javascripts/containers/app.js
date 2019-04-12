@@ -9,10 +9,6 @@ import Summary from "../components/summary";
 import classNames from "classnames";
 
 class App extends Component {
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired
-  };
-
   constructor(props) {
     super(props);
 

@@ -90,6 +90,11 @@ body {
   text-align: center;
 }
 
+.Weather-icon .Skycon {
+  position: relative;
+  top: 10px;
+}
+
 .Weather-temperature {
   font-size: 87px;
   position: absolute;
