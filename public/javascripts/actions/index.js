@@ -8,7 +8,7 @@ export const FETCH_ALLERGIES = 'FETCH_ALLERGIES';
 export const RECEIVE_ALLERGIES = 'RECEIVE_ALLERGIES';
 export const FETCH_ALLERGIES_ERROR = 'FETCH_ALLERGIES_ERROR';
 
-export const fetchWeather = () => dispatch => {
+export const fetchWeather = () => (dispatch) => {
   dispatch({type: FETCH_WEATHER});
 
   return fetch('/ajax/weather')
@@ -22,8 +22,7 @@ export const fetchWeather = () => dispatch => {
             weather,
           });
         });
-      }
-      else {
+      } else {
         json.then(({error}) => {
           return dispatch({
             type: FETCH_WEATHER_ERROR,
@@ -34,13 +33,13 @@ export const fetchWeather = () => dispatch => {
     })
     .catch((response) => {
       return dispatch({
-          type: FETCH_WEATHER_ERROR,
-          error: response.statusText,
-        });
+        type: FETCH_WEATHER_ERROR,
+        error: response.statusText,
+      });
     });
-}
+};
 
-export const fetchAllergies = () => dispatch => {
+export const fetchAllergies = () => (dispatch) => {
   dispatch({type: FETCH_ALLERGIES});
 
   return fetch('/ajax/allergies')
@@ -54,8 +53,7 @@ export const fetchAllergies = () => dispatch => {
             allergies,
           });
         });
-      }
-      else {
+      } else {
         json.then(({error}) => {
           return dispatch({
             type: FETCH_ALLERGIES_ERROR,
@@ -66,8 +64,8 @@ export const fetchAllergies = () => dispatch => {
     })
     .catch((response) => {
       return dispatch({
-          type: FETCH_ALLERGIES_ERROR,
-          error: response.statusText,
-        });
+        type: FETCH_ALLERGIES_ERROR,
+        error: response.statusText,
+      });
     });
-}
+};

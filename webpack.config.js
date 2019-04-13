@@ -8,17 +8,17 @@ if (PRODUCTION) {
   plugins.push(
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
-      }
-    })
+        warnings: false,
+      },
+    }),
   );
 
   plugins.push(
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production'),
+        NODE_ENV: JSON.stringify('production'),
       },
-    })
+    }),
   );
 }
 
@@ -26,7 +26,7 @@ module.exports = {
   entry: ['whatwg-fetch', 'babel-polyfill', './public/javascripts/index.js'],
   output: {
     path: './public/javascripts',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     loaders: [

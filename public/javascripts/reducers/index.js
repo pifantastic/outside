@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux'
+import {combineReducers} from 'redux';
 import {
   FETCH_WEATHER,
   RECEIVE_WEATHER,

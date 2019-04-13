@@ -1,8 +1,24 @@
-
 export const degreesToDirection = (degrees) => {
-  const directions = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
-  return directions[(Math.round((degrees / 22.5) + .5) % directions.length)];
-}
+  const directions = [
+    'N',
+    'NNE',
+    'NE',
+    'ENE',
+    'E',
+    'ESE',
+    'SE',
+    'SSE',
+    'S',
+    'SSW',
+    'SW',
+    'WSW',
+    'W',
+    'WNW',
+    'NW',
+    'NNW',
+  ];
+  return directions[Math.round(degrees / 22.5 + 0.5) % directions.length];
+};
 
 export const numberToOrdinal = (i) => {
   const j = i % 10;
@@ -17,4 +33,4 @@ export const numberToOrdinal = (i) => {
     return 'rd';
   }
   return 'th';
-}
+};

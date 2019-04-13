@@ -8,7 +8,7 @@ const DAYS = [
   'Wednesday',
   'Thursday',
   'Friday',
-  'Saturday'
+  'Saturday',
 ];
 
 const MONTHS = [
@@ -23,7 +23,7 @@ const MONTHS = [
   'September',
   'October',
   'November',
-  'December'
+  'December',
 ];
 
 class _Date extends Component {
@@ -60,10 +60,11 @@ class _Date extends Component {
       <div className="Date">
         <div className="Date-weekday">{weekday}</div>
         <div className="Date-date">
-          {month} {day}{numberToOrdinal(day)}
+          {month} {day}
+          {numberToOrdinal(day)}
         </div>
       </div>
-    )
+    );
   }
 }
 

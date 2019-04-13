@@ -7,7 +7,8 @@ const config = require('../config');
 router.get('/weather', function(req, res, next) {
   const weather = new Weather();
 
-  weather.forecast(config.location)
+  weather
+    .forecast(config.location)
     .then((forecast) => {
       res.json(forecast);
     })
@@ -23,7 +24,8 @@ router.get('/weather', function(req, res, next) {
 router.get('/allergies', function(req, res, next) {
   const allergies = new Allergies();
 
-  allergies.forecast(config.zipCode)
+  allergies
+    .forecast(config.zipCode)
     .then((forecast) => {
       res.json(forecast);
     })

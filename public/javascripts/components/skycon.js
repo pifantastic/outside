@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from 'react';
 import skycons from 'skycons';
 
 const Skycons = new skycons(window);

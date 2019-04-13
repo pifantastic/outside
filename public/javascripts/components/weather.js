@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React, {Component} from 'react';
 import Skycon from './skycon';
-import { degreesToDirection } from "../lib/conversions";
+import {degreesToDirection} from '../lib/conversions';
 
 class Weather extends Component {
   render() {
-    const { weather } = this.props;
+    const {weather} = this.props;
 
-    const { currently, hourly, daily, minutely } = weather;
+    const {currently, hourly, daily, minutely} = weather;
     const {
       temperature,
       humidity,
@@ -14,10 +14,10 @@ class Weather extends Component {
       icon,
       precipProbability,
       windSpeed,
-      windBearing
+      windBearing,
     } = currently;
     const today = daily.data.length ? daily.data[0] : {};
-    const { temperatureMax, temperatureMin } = today;
+    const {temperatureMax, temperatureMin} = today;
 
     return (
       <div className="Weather">

@@ -1,24 +1,24 @@
-import React, { Component, PropTypes } from "react";
-import { connect } from "react-redux";
-import { fetchWeather } from "../actions";
-import Weather from "../components/weather";
-import Clock from "../components/clock";
-import Forecast from "../components/forecast";
-import DateComponent from "../components/date";
-import Summary from "../components/summary";
-import classNames from "classnames";
+import React, {Component, PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {fetchWeather} from '../actions';
+import Weather from '../components/weather';
+import Clock from '../components/clock';
+import Forecast from '../components/forecast';
+import DateComponent from '../components/date';
+import Summary from '../components/summary';
+import classNames from 'classnames';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      theme: "day"
+      theme: 'day',
     };
   }
 
   componentDidMount() {
-    const { dispatch } = this.props;
+    const {dispatch} = this.props;
 
     dispatch(fetchWeather());
 
@@ -26,7 +26,7 @@ class App extends Component {
 
     this.weatherInterval = setInterval(
       () => dispatch(fetchWeather()),
-      5 * 60 * 1000
+      5 * 60 * 1000,
     );
     this.themeInterval = setInterval(() => this.setTheme(), 1 * 60 * 1000);
   }
@@ -38,17 +38,17 @@ class App extends Component {
 
   setTheme() {
     const hour = new Date().getHours();
-    const theme = hour >= 23 || hour <= 6 ? "night" : "day";
+    const theme = hour >= 23 || hour <= 6 ? 'night' : 'day';
 
-    this.setState({ theme: theme });
+    this.setState({theme: theme});
   }
 
   render() {
-    const { theme } = this.state;
-    const { weather } = this.props;
-    const { isInitializing, error } = weather;
-    const className = classNames("App", {
-      "App--night": theme === "night"
+    const {theme} = this.state;
+    const {weather} = this.props;
+    const {isInitializing, error} = weather;
+    const className = classNames('App', {
+      'App--night': theme === 'night',
     });
 
     if (isInitializing) {
@@ -90,9 +90,9 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    weather: state.weather
+    weather: state.weather,
   };
 };
 

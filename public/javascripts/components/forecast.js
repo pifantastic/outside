@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Icon from "./icon";
+import React, {Component} from 'react';
+import Icon from './icon';
 
 const MAX_PIXELS = 150;
 const MIN_PIXELS = 40;
@@ -7,13 +7,13 @@ const PADDING = 2;
 
 class Forecast extends Component {
   render() {
-    const { weather, isInitializing } = this.props;
+    const {weather, isInitializing} = this.props;
 
     if (isInitializing) {
       return <div>Initializing...</div>;
     }
 
-    const { hourly } = weather;
+    const {hourly} = weather;
 
     // Grab the next 12 hours of data.
     const hours = hourly.data.slice(0, 18);
@@ -32,11 +32,11 @@ class Forecast extends Component {
 
     return (
       <div className="Forecast">
-        {hours.map(hour => {
-          const { time, summary, temperature, icon } = hour;
+        {hours.map((hour) => {
+          const {time, summary, temperature, icon} = hour;
 
           const date = new Date(time * 1000);
-          const period = date.getHours() >= 12 ? "pm" : "am";
+          const period = date.getHours() >= 12 ? 'pm' : 'am';
           const height =
             ((MAX_PIXELS - MIN_PIXELS) / 100) *
               (((Math.round(temperature) - minTemp) / (maxTemp - minTemp)) *
@@ -44,11 +44,11 @@ class Forecast extends Component {
             MIN_PIXELS;
 
           const tempStyle = {
-            bottom: height
+            bottom: height,
           };
 
           const barStyle = {
-            height: height
+            height: height,
           };
 
           return (

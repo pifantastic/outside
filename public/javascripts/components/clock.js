@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import moment from "moment";
-import { numberToOrdinal } from "../lib/conversions";
-import Icon from "./icon";
+import React, {Component} from 'react';
+import moment from 'moment';
+import {numberToOrdinal} from '../lib/conversions';
+import Icon from './icon';
 
-const SUN_FORMAT = "h:mm a";
+const SUN_FORMAT = 'h:mm a';
 
 class Clock extends Component {
   constructor(props) {
@@ -27,18 +27,18 @@ class Clock extends Component {
     return {
       hours: hours > 12 ? hours - 12 : hours === 0 ? 12 : hours,
       minutes: minutes > 9 ? minutes : `0${minutes}`,
-      period: hours >= 12 ? "pm" : "am"
+      period: hours >= 12 ? 'pm' : 'am',
     };
   }
 
   renderSun() {
-    const { weather, isInitializing, isLoading } = this.props;
+    const {weather, isInitializing} = this.props;
 
-    if (isLoading || isInitializing) {
+    if (isInitializing) {
       return null;
     }
 
-    const { daily } = weather;
+    const {daily} = weather;
 
     const data = daily.data.length ? daily.data[0] : null;
 
@@ -49,11 +49,11 @@ class Clock extends Component {
     return (
       <div className="Clock-sun">
         <div className="Clock-sunrise">
-          <Icon icon="sunrise" />{" "}
+          <Icon icon="sunrise" />{' '}
           {moment(data.sunriseTime * 1000).format(SUN_FORMAT)}
         </div>
         <div className="Clock-sunset">
-          <Icon icon="sunset" />{" "}
+          <Icon icon="sunset" />{' '}
           {moment(data.sunsetTime * 1000).format(SUN_FORMAT)}
         </div>
       </div>
@@ -61,7 +61,7 @@ class Clock extends Component {
   }
 
   render() {
-    const { hours, minutes, seconds, period } = this.state;
+    const {hours, minutes, seconds, period} = this.state;
 
     return (
       <div className="Clock">
