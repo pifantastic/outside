@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import skycons from 'skycons';
 
 const Skycons = new skycons(window);
@@ -35,5 +36,12 @@ class Skycon extends Component {
     );
   }
 }
+
+Skycon.propTypes = {
+  color: PropTypes.string,
+  icon: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
+};
 
 export default Skycon;

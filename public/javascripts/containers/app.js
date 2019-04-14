@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {fetchWeather} from '../actions';
 import Weather from '../components/weather';
@@ -89,6 +90,11 @@ class App extends Component {
     }
   }
 }
+
+App.propTypes = {
+  weather: PropTypes.object,
+  dispatch: PropTypes.func,
+};
 
 const mapStateToProps = (state) => {
   return {

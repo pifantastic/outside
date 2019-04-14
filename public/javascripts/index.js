@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
 import {createStore, applyMiddleware} from 'redux';
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';

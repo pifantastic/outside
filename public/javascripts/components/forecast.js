@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Icon from './icon';
 
 const MAX_PIXELS = 150;
@@ -33,7 +34,7 @@ class Forecast extends Component {
     return (
       <div className="Forecast">
         {hours.map((hour) => {
-          const {time, summary, temperature, icon} = hour;
+          const {time, temperature, icon} = hour;
 
           const date = new Date(time * 1000);
           const period = date.getHours() >= 12 ? 'pm' : 'am';
@@ -75,5 +76,10 @@ class Forecast extends Component {
     );
   }
 }
+
+Forecast.propTypes = {
+  weather: PropTypes.object,
+  isInitializing: PropTypes.boolean,
+};
 
 export default Forecast;

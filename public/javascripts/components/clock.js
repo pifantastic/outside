@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
-import {numberToOrdinal} from '../lib/conversions';
 import Icon from './icon';
 
 const SUN_FORMAT = 'h:mm a';
@@ -9,9 +9,6 @@ class Clock extends Component {
   constructor(props) {
     super(props);
     this.state = this.time();
-  }
-
-  componentWillMount() {
     this.interval = setInterval(() => this.setState(this.time()), 1000);
   }
 
@@ -61,7 +58,7 @@ class Clock extends Component {
   }
 
   render() {
-    const {hours, minutes, seconds, period} = this.state;
+    const {hours, minutes, period} = this.state;
 
     return (
       <div className="Clock">
@@ -75,5 +72,10 @@ class Clock extends Component {
     );
   }
 }
+
+Clock.propTypes = {
+  weather: PropTypes.object,
+  isInitializing: PropTypes.boolean,
+};
 
 export default Clock;

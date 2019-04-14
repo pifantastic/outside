@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 const FORECAST_ICONS = {
   'clear-day': 'day-sunny',
@@ -21,5 +22,9 @@ class Icon extends Component {
     return <i className={`Icon wi wi-${FORECAST_ICONS[icon]}`} />;
   }
 }
+
+Icon.propTypes = {
+  icon: PropTypes.string,
+};
 
 export default Icon;

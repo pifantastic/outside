@@ -30,9 +30,6 @@ class _Date extends Component {
   constructor(props) {
     super(props);
     this.state = this.date();
-  }
-
-  componentWillMount() {
     this.interval = setInterval(() => this.setState(this.date()), 1000);
   }
 

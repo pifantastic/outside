@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 // The amount of time (in milliseconds) to wait before advancing to the next
 // summary.
@@ -45,5 +46,10 @@ class Summary extends Component {
     return <div className="Summary">{this.currentSummary()}</div>;
   }
 }
+
+Summary.propTypes = {
+  weather: PropTypes.object,
+  isInitializing: PropTypes.boolean,
+};
 
 export default Summary;

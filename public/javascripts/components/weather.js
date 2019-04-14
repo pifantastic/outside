@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Skycon from './skycon';
 import {degreesToDirection} from '../lib/conversions';
 
@@ -6,7 +7,7 @@ class Weather extends Component {
   render() {
     const {weather} = this.props;
 
-    const {currently, hourly, daily, minutely} = weather;
+    const {currently, daily, minutely} = weather;
     const {
       temperature,
       humidity,
@@ -59,5 +60,10 @@ class Weather extends Component {
     );
   }
 }
+
+Weather.propTypes = {
+  weather: PropTypes.object,
+  isInitializing: PropTypes.boolean,
+};
 
 export default Weather;
