@@ -39,30 +39,30 @@ body {
   z-index: 99999;
 }
 
-.App--hour-00:before { opacity: 0.25; }
-.App--hour-01:before { opacity: 0.25; }
-.App--hour-02:before { opacity: 0.25; }
-.App--hour-03:before { opacity: 0.25; }
-.App--hour-04:before { opacity: 0.25; }
-.App--hour-05:before { opacity: 0.25; }
-.App--hour-06:before { opacity: 0.20; }
-.App--hour-07:before { opacity: 0.20; }
-.App--hour-08:before { opacity: 0.15; }
-.App--hour-09:before { opacity: 0.10; }
-.App--hour-10:before { opacity: 0.05; }
-.App--hour-11:before { opacity: 0.00; }
-.App--hour-12:before { opacity: 0.00; }
-.App--hour-13:before { opacity: 0.00; }
-.App--hour-14:before { opacity: 0.00; }
-.App--hour-15:before { opacity: 0.00; }
-.App--hour-16:before { opacity: 0.00; }
+.App--hour-00:before { opacity: 0.30; }
+.App--hour-01:before { opacity: 0.30; }
+.App--hour-02:before { opacity: 0.30; }
+.App--hour-03:before { opacity: 0.30; }
+.App--hour-04:before { opacity: 0.30; }
+.App--hour-05:before { opacity: 0.30; }
+.App--hour-06:before { opacity: 0.25; }
+.App--hour-07:before { opacity: 0.25; }
+.App--hour-08:before { opacity: 0.20; }
+.App--hour-09:before { opacity: 0.15; }
+.App--hour-10:before { opacity: 0.10; }
+.App--hour-11:before { opacity: 0.05; }
+.App--hour-12:before { opacity: 0.05; }
+.App--hour-13:before { opacity: 0.05; }
+.App--hour-14:before { opacity: 0.05; }
+.App--hour-15:before { opacity: 0.05; }
+.App--hour-16:before { opacity: 0.05; }
 .App--hour-17:before { opacity: 0.05; }
 .App--hour-18:before { opacity: 0.10; }
 .App--hour-19:before { opacity: 0.15; }
 .App--hour-20:before { opacity: 0.20; }
 .App--hour-21:before { opacity: 0.25; }
-.App--hour-22:before { opacity: 0.25; }
-.App--hour-23:before { opacity: 0.25; }
+.App--hour-22:before { opacity: 0.30; }
+.App--hour-23:before { opacity: 0.30; }
 
 .Clock {
   font-size: 106px;
