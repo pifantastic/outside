@@ -30,42 +30,39 @@ body {
   border-bottom: none;
 }
 
-.App:after {
-  content: '';
-  display: block;
-  height: 100%;
+.App:before {
   position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  backdrop-filter: sepia(30%);
-  z-index: 10000 !important;
+  width: 100%; height: 100%;
+  background-color: #ffa339;
+  pointer-events: none;
+  content: ' ';
+  z-index: 99999;
 }
 
-.App--hour-00:after { backdrop-filter: sepia(50%); }
-.App--hour-01:after { backdrop-filter: sepia(50%); }
-.App--hour-02:after { backdrop-filter: sepia(50%); }
-.App--hour-03:after { backdrop-filter: sepia(50%); }
-.App--hour-04:after { backdrop-filter: sepia(40%); }
-.App--hour-05:after { backdrop-filter: sepia(30%); }
-.App--hour-06:after { backdrop-filter: sepia(20%); }
-.App--hour-07:after { backdrop-filter: sepia(15%); }
-.App--hour-08:after { backdrop-filter: sepia(10%); }
-.App--hour-09:after { backdrop-filter: sepia(5%); }
-.App--hour-10:after { backdrop-filter: sepia(5%); }
-.App--hour-11:after { backdrop-filter: sepia(0%); }
-.App--hour-12:after { backdrop-filter: sepia(0%); }
-.App--hour-13:after { backdrop-filter: sepia(0%); }
-.App--hour-14:after { backdrop-filter: sepia(0%); }
-.App--hour-15:after { backdrop-filter: sepia(5%); }
-.App--hour-16:after { backdrop-filter: sepia(10%); }
-.App--hour-17:after { backdrop-filter: sepia(15%); }
-.App--hour-18:after { backdrop-filter: sepia(20%); }
-.App--hour-19:after { backdrop-filter: sepia(30%); }
-.App--hour-20:after { backdrop-filter: sepia(40%); }
-.App--hour-21:after { backdrop-filter: sepia(50%); }
-.App--hour-22:after { backdrop-filter: sepia(50%); }
-.App--hour-23:after { backdrop-filter: sepia(50%); }
+.App--hour-00:before { opacity: 0.25; }
+.App--hour-01:before { opacity: 0.25; }
+.App--hour-02:before { opacity: 0.25; }
+.App--hour-03:before { opacity: 0.25; }
+.App--hour-04:before { opacity: 0.25; }
+.App--hour-05:before { opacity: 0.25; }
+.App--hour-06:before { opacity: 0.20; }
+.App--hour-07:before { opacity: 0.20; }
+.App--hour-08:before { opacity: 0.15; }
+.App--hour-09:before { opacity: 0.10; }
+.App--hour-10:before { opacity: 0.05; }
+.App--hour-11:before { opacity: 0.00; }
+.App--hour-12:before { opacity: 0.00; }
+.App--hour-13:before { opacity: 0.00; }
+.App--hour-14:before { opacity: 0.00; }
+.App--hour-15:before { opacity: 0.00; }
+.App--hour-16:before { opacity: 0.00; }
+.App--hour-17:before { opacity: 0.05; }
+.App--hour-18:before { opacity: 0.10; }
+.App--hour-19:before { opacity: 0.15; }
+.App--hour-20:before { opacity: 0.20; }
+.App--hour-21:before { opacity: 0.25; }
+.App--hour-22:before { opacity: 0.25; }
+.App--hour-23:before { opacity: 0.25; }
 
 .Clock {
   font-size: 106px;
