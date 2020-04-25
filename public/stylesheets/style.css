@@ -30,6 +30,43 @@ body {
   border-bottom: none;
 }
 
+.App:after {
+  content: '';
+  display: block;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: sepia(30%);
+  z-index: 10000 !important;
+}
+
+.App--hour-00 { backdrop-filter: sepia(30%); }
+.App--hour-01 { backdrop-filter: sepia(30%); }
+.App--hour-02 { backdrop-filter: sepia(30%); }
+.App--hour-03 { backdrop-filter: sepia(30%); }
+.App--hour-04 { backdrop-filter: sepia(30%); }
+.App--hour-05 { backdrop-filter: sepia(30%); }
+.App--hour-06 { backdrop-filter: sepia(20%); }
+.App--hour-07 { backdrop-filter: sepia(10%); }
+.App--hour-08 { backdrop-filter: sepia(0%); }
+.App--hour-09 { backdrop-filter: sepia(0%); }
+.App--hour-10 { backdrop-filter: sepia(0%); }
+.App--hour-11 { backdrop-filter: sepia(0%); }
+.App--hour-12 { backdrop-filter: sepia(0%); }
+.App--hour-13 { backdrop-filter: sepia(0%); }
+.App--hour-14 { backdrop-filter: sepia(0%); }
+.App--hour-15 { backdrop-filter: sepia(0%); }
+.App--hour-16 { backdrop-filter: sepia(0%); }
+.App--hour-17 { backdrop-filter: sepia(0%); }
+.App--hour-18 { backdrop-filter: sepia(10%); }
+.App--hour-19 { backdrop-filter: sepia(20%); }
+.App--hour-20 { backdrop-filter: sepia(30%); }
+.App--hour-21 { backdrop-filter: sepia(30%); }
+.App--hour-22 { backdrop-filter: sepia(30%); }
+.App--hour-23 { backdrop-filter: sepia(30%); }
+
 .Clock {
   font-size: 106px;
   position: absolute;

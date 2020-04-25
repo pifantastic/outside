@@ -15,6 +15,7 @@ class App extends Component {
 
     this.state = {
       theme: 'day',
+      hour: new Date().getHours(),
     };
   }
 
@@ -41,15 +42,19 @@ class App extends Component {
     const hour = new Date().getHours();
     const theme = hour >= 23 || hour <= 6 ? 'night' : 'day';
 
-    this.setState({theme: theme});
+    this.setState({
+      theme: theme,
+      hour: hour,
+    });
   }
 
   render() {
-    const {theme} = this.state;
+    const {theme, hour} = this.state;
     const {weather} = this.props;
     const {isInitializing, error} = weather;
     const className = classNames('App', {
       'App--night': theme === 'night',
+      [`App--hour-${hour}`]: true,
     });
 
     if (isInitializing) {
