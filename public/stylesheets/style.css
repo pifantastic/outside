@@ -42,30 +42,30 @@ body {
   z-index: 10000 !important;
 }
 
-.App--hour-00:after { backdrop-filter: sepia(30%); }
-.App--hour-01:after { backdrop-filter: sepia(30%); }
-.App--hour-02:after { backdrop-filter: sepia(30%); }
-.App--hour-03:after { backdrop-filter: sepia(30%); }
-.App--hour-04:after { backdrop-filter: sepia(30%); }
+.App--hour-00:after { backdrop-filter: sepia(50%); }
+.App--hour-01:after { backdrop-filter: sepia(50%); }
+.App--hour-02:after { backdrop-filter: sepia(50%); }
+.App--hour-03:after { backdrop-filter: sepia(50%); }
+.App--hour-04:after { backdrop-filter: sepia(40%); }
 .App--hour-05:after { backdrop-filter: sepia(30%); }
 .App--hour-06:after { backdrop-filter: sepia(20%); }
-.App--hour-07:after { backdrop-filter: sepia(10%); }
-.App--hour-08:after { backdrop-filter: sepia(5%); }
+.App--hour-07:after { backdrop-filter: sepia(15%); }
+.App--hour-08:after { backdrop-filter: sepia(10%); }
 .App--hour-09:after { backdrop-filter: sepia(5%); }
 .App--hour-10:after { backdrop-filter: sepia(5%); }
-.App--hour-11:after { backdrop-filter: sepia(5%); }
-.App--hour-12:after { backdrop-filter: sepia(5%); }
-.App--hour-13:after { backdrop-filter: sepia(5%); }
-.App--hour-14:after { backdrop-filter: sepia(5%); }
+.App--hour-11:after { backdrop-filter: sepia(0%); }
+.App--hour-12:after { backdrop-filter: sepia(0%); }
+.App--hour-13:after { backdrop-filter: sepia(0%); }
+.App--hour-14:after { backdrop-filter: sepia(0%); }
 .App--hour-15:after { backdrop-filter: sepia(5%); }
-.App--hour-16:after { backdrop-filter: sepia(5%); }
-.App--hour-17:after { backdrop-filter: sepia(5%); }
-.App--hour-18:after { backdrop-filter: sepia(10%); }
-.App--hour-19:after { backdrop-filter: sepia(20%); }
-.App--hour-20:after { backdrop-filter: sepia(30%); }
-.App--hour-21:after { backdrop-filter: sepia(30%); }
-.App--hour-22:after { backdrop-filter: sepia(30%); }
-.App--hour-23:after { backdrop-filter: sepia(30%); }
+.App--hour-16:after { backdrop-filter: sepia(10%); }
+.App--hour-17:after { backdrop-filter: sepia(15%); }
+.App--hour-18:after { backdrop-filter: sepia(20%); }
+.App--hour-19:after { backdrop-filter: sepia(30%); }
+.App--hour-20:after { backdrop-filter: sepia(40%); }
+.App--hour-21:after { backdrop-filter: sepia(50%); }
+.App--hour-22:after { backdrop-filter: sepia(50%); }
+.App--hour-23:after { backdrop-filter: sepia(50%); }
 
 .Clock {
   font-size: 106px;
