@@ -39,16 +39,16 @@ body {
   z-index: 99999;
 }
 
-.App--hour-00:before { opacity: 0.30; }
-.App--hour-01:before { opacity: 0.30; }
-.App--hour-02:before { opacity: 0.30; }
-.App--hour-03:before { opacity: 0.30; }
-.App--hour-04:before { opacity: 0.30; }
-.App--hour-05:before { opacity: 0.30; }
-.App--hour-06:before { opacity: 0.25; }
-.App--hour-07:before { opacity: 0.25; }
-.App--hour-08:before { opacity: 0.20; }
-.App--hour-09:before { opacity: 0.15; }
+.App--hour-0:before { opacity: 0.30; }
+.App--hour-1:before { opacity: 0.30; }
+.App--hour-2:before { opacity: 0.30; }
+.App--hour-3:before { opacity: 0.30; }
+.App--hour-4:before { opacity: 0.30; }
+.App--hour-5:before { opacity: 0.30; }
+.App--hour-6:before { opacity: 0.25; }
+.App--hour-7:before { opacity: 0.25; }
+.App--hour-8:before { opacity: 0.20; }
+.App--hour-9:before { opacity: 0.15; }
 .App--hour-10:before { opacity: 0.10; }
 .App--hour-11:before { opacity: 0.05; }
 .App--hour-12:before { opacity: 0.05; }
