@@ -22,6 +22,12 @@ class Skycon extends Component {
   componentWillUnmount() {
     this.skycons.remove(this.iconRef.current);
   }
+  
+  componentDidUpdate(prevProps) {
+    if (this.props.icon !== prevProps.icon) {
+      this.skycons.set(this.iconRef.current, this.props.icon);
+    }
+  }
 
   render() {
     const {width, height} = this.props;
