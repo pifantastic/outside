@@ -8,6 +8,7 @@ class Weather extends Component {
     const {weather} = this.props;
 
     const {realtime, daily, hourly} = weather;
+    const hour = hourly[0];
     const {
       temp,
       humidity,
@@ -17,9 +18,8 @@ class Weather extends Component {
       wind_direction,
       epa_aqi,
       epa_health_concern,
-    } = realtime;
+    } = hour;
     const today = daily.length ? daily[0] : {};
-    const hour = hourly[0];
     const [temperatureMin, temperatureMax] = today.temp;
 
     return (
