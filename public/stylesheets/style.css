@@ -239,3 +239,39 @@ body {
   padding: 0 5px;
   font-size: 14px;
 }
+
+.AirQuality-badge {
+  border-radius: 4px;
+  color: #f6f9fc;
+  padding: 2px 4px;
+  font-size: 12px;
+  vertical-align: middle;
+  line-height: 20px;
+  margin-left: 4px;
+}
+
+.AirQuality-badge--green {
+  background-color: green;
+}
+
+.AirQuality-badge--yellow {
+  background-color: yellow;
+  color: #222;
+}
+
+.AirQuality-badge--orange {
+  background-color: orange;
+  color: #222;
+}
+
+.AirQuality-badge--red {
+  background-color: red;
+}
+
+.AirQuality-badge--purple {
+  background-color: purple;
+}
+
+.AirQuality-badge--maroon {
+  background-color: maroon;
+}

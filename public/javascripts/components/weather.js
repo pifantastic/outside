@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Icon from './icon';
 import {degreesToDirection} from '../lib/conversions';
+import AirQuality from './air_quality';
 
 class Weather extends Component {
   render() {
@@ -56,7 +57,7 @@ class Weather extends Component {
               <tr>
                 <th>air quality</th>
                 <td>
-                  {epa_aqi.value} {epa_health_concern.value}
+                  <AirQuality value={epa_aqi.value} />
                 </td>
               </tr>
             </tbody>
