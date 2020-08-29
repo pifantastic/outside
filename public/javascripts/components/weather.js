@@ -1,35 +1,38 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Skycon from './skycon';
+import Icon from './icon';
 import {degreesToDirection} from '../lib/conversions';
 
 class Weather extends Component {
   render() {
     const {weather} = this.props;
 
-    const {currently, daily, minutely} = weather;
+    const {realtime, daily, hourly} = weather;
     const {
-      temperature,
+      temp,
       humidity,
-      summary,
-      icon,
-      precipProbability,
-      windSpeed,
-      windBearing,
-    } = currently;
-    const today = daily.data.length ? daily.data[0] : {};
-    const {temperatureMax, temperatureMin} = today;
+      // summary,
+      weather_code,
+      wind_speed,
+      wind_direction,
+      epa_aqi,
+      epa_health_concern,
+    } = realtime;
+    const today = daily.length ? daily[0] : {};
+    const hour = hourly[0];
+    const [temperatureMin, temperatureMax] = today.temp;
 
     return (
       <div className="Weather">
         <div className="Weather-icon">
-          <Skycon icon={icon} width={88} height={82} color="#424770" />
-          <div className="Weather-summary">{summary}</div>
+          <Icon icon={weather_code.value} />
+          <div className="Weather-summary">{weather_code.value}</div>
         </div>
         <div className="Weather-temperature">
-          {Math.round(temperature)}℉
+          {Math.round(temp.value)}℉
           <div className="Weather-temperature-highlow">
-            {Math.round(temperatureMax)}℉ / {Math.round(temperatureMin)}℉
+            {Math.round(temperatureMax.max.value)}℉ /{' '}
+            {Math.round(temperatureMin.min.value)}℉
           </div>
         </div>
         <div className="Weather-stats">
@@ -37,21 +40,24 @@ class Weather extends Component {
             <tbody>
               <tr>
                 <th>humidity</th>
-                <td>{Math.round(humidity * 100)}%</td>
+                <td>{Math.round(humidity.value)}%</td>
               </tr>
               <tr>
                 <th>precipitation</th>
-                <td>{Math.round(precipProbability * 100)}%</td>
+                <td>{Math.round(hour.precipitation_probability.value)}%</td>
               </tr>
               <tr>
                 <th>wind</th>
                 <td>
-                  {windSpeed} mph {degreesToDirection(windBearing + 180)}
+                  {wind_speed.value} mph{' '}
+                  {degreesToDirection(wind_direction.value)}
                 </td>
               </tr>
               <tr>
-                <th>summary</th>
-                <td>{minutely.summary}</td>
+                <th>air quality</th>
+                <td>
+                  {epa_aqi.value} {epa_health_concern.value}
+                </td>
               </tr>
             </tbody>
           </table>
@@ -63,7 +69,7 @@ class Weather extends Component {
 
 Weather.propTypes = {
   weather: PropTypes.object,
-  isInitializing: PropTypes.boolean,
+  isInitializing: PropTypes.bool,
 };
 
 export default Weather;

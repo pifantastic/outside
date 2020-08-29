@@ -17,30 +17,31 @@ class Forecast extends Component {
     const {hourly} = weather;
 
     // Grab the next 12 hours of data.
-    const hours = hourly.data.slice(0, 18);
+    const hours = hourly.slice(0, 18);
 
     // Calculate the maximum temperature to display.
     const maxTemp =
       hours.reduce((a, b) => {
-        return Math.max(a, Math.round(b.temperature));
+        return Math.max(a, Math.round(b.temp.value));
       }, -Infinity) + PADDING;
 
     // Calculate the minimum temperature to display.
     const minTemp =
       hours.reduce((a, b) => {
-        return Math.min(a, Math.round(b.temperature));
+        return Math.min(a, Math.round(b.temp.value));
       }, Infinity) - PADDING;
 
     return (
       <div className="Forecast">
-        {hours.map((hour) => {
-          const {time, temperature, icon} = hour;
+        {hours.map((hour, index) => {
+          const {temp, weather_code} = hour;
 
-          const date = new Date(time * 1000);
+          const date = new Date();
+          date.setTime(date.getTime() + index * 60 * 60 * 1000);
           const period = date.getHours() >= 12 ? 'pm' : 'am';
           const height =
             ((MAX_PIXELS - MIN_PIXELS) / 100) *
-              (((Math.round(temperature) - minTemp) / (maxTemp - minTemp)) *
+              (((Math.round(temp.value) - minTemp) / (maxTemp - minTemp)) *
                 100) +
             MIN_PIXELS;
 
@@ -53,12 +54,12 @@ class Forecast extends Component {
           };
 
           return (
-            <div key={time} className="Forecast-hour">
+            <div key={`hour-${index}`} className="Forecast-hour">
               <div className="Forecast-hour-temperature" style={tempStyle}>
-                {Math.round(temperature)}℉
+                {Math.round(temp.value)}℉
               </div>
               <div className="Forecast-hour-icon">
-                <Icon icon={icon} />
+                <Icon icon={weather_code.value} />
               </div>
               <div className="Forecast-hour-time">
                 {date.getHours() > 12
@@ -79,7 +80,7 @@ class Forecast extends Component {
 
 Forecast.propTypes = {
   weather: PropTypes.object,
-  isInitializing: PropTypes.boolean,
+  isInitializing: PropTypes.bool,
 };
 
 export default Forecast;

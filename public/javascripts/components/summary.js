@@ -49,7 +49,7 @@ class Summary extends Component {
 
 Summary.propTypes = {
   weather: PropTypes.object,
-  isInitializing: PropTypes.boolean,
+  isInitializing: PropTypes.bool,
 };
 
 export default Summary;

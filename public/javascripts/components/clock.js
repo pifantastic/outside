@@ -37,7 +37,7 @@ class Clock extends Component {
 
     const {daily} = weather;
 
-    const data = daily.data.length ? daily.data[0] : null;
+    const data = daily.length ? daily[0] : null;
 
     if (!data) {
       return null;
@@ -47,11 +47,10 @@ class Clock extends Component {
       <div className="Clock-sun">
         <div className="Clock-sunrise">
           <Icon icon="sunrise" />{' '}
-          {moment(data.sunriseTime * 1000).format(SUN_FORMAT)}
+          {moment(data.sunrise.value).format(SUN_FORMAT)}
         </div>
         <div className="Clock-sunset">
-          <Icon icon="sunset" />{' '}
-          {moment(data.sunsetTime * 1000).format(SUN_FORMAT)}
+          <Icon icon="sunset" /> {moment(data.sunset.value).format(SUN_FORMAT)}
         </div>
       </div>
     );
@@ -75,7 +74,7 @@ class Clock extends Component {
 
 Clock.propTypes = {
   weather: PropTypes.object,
-  isInitializing: PropTypes.boolean,
+  isInitializing: PropTypes.bool,
 };
 
 export default Clock;

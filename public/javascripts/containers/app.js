@@ -87,7 +87,7 @@ class App extends Component {
             <Clock {...weather} />
             <DateComponent />
           </div>
-          <Summary {...weather} />
+          {/* <Summary {...weather} /> */}
           <Weather {...weather} />
           <Forecast {...weather} />
         </div>
