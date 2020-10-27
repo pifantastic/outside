@@ -8,18 +8,16 @@ class Weather extends Component {
   render() {
     const {weather} = this.props;
 
-    const {realtime, daily, hourly} = weather;
-    const hour = hourly[0];
+    const {realtime, daily} = weather;
     const {
       temp,
+      epa_aqi,
       humidity,
-      // summary,
       weather_code,
       wind_speed,
       wind_direction,
-      epa_aqi,
-      epa_health_concern,
-    } = hour;
+      precipitation_probability,
+    } = realtime;
     const today = daily.length ? daily[0] : {};
     const [temperatureMin, temperatureMax] = today.temp;
 
@@ -45,7 +43,7 @@ class Weather extends Component {
               </tr>
               <tr>
                 <th>precipitation</th>
-                <td>{Math.round(hour.precipitation_probability.value)}%</td>
+                <td>{Math.round(precipitation_probability.value)}%</td>
               </tr>
               <tr>
                 <th>wind</th>
