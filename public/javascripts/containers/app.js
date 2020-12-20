@@ -28,7 +28,7 @@ class App extends Component {
 
     this.weatherInterval = setInterval(
       () => dispatch(fetchWeather()),
-      5 * 60 * 1000,
+      10 * 60 * 1000,
     );
     this.themeInterval = setInterval(() => this.setTheme(), 1 * 60 * 1000);
   }
